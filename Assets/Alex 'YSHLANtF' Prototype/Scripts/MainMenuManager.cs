@@ -13,6 +13,9 @@ public class MainMenuManager : MonoBehaviour {
 	public int nextroom;
 	public AudioSource ambient;
 	public AudioSource ambient1;
+	public bool skip = false;
+
+	Coroutine fades;
 
 	void Awake(){
 		fm = GameObject.FindGameObjectWithTag ("FadeManager").GetComponent<FadeManager> ();
@@ -20,7 +23,18 @@ public class MainMenuManager : MonoBehaviour {
 
 	void Start(){
 
-		StartCoroutine (Fadeout ());
+		fades = StartCoroutine (Fadeout ());
+	}
+
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Tab)) {
+
+			//skip = true;
+			StopCoroutine(fades);
+			Introfade.alpha = 0f;
+			ambient.playOnAwake = true;
+			ambient1.mute = false;
+		}
 	}
 		
 
@@ -50,14 +64,18 @@ public class MainMenuManager : MonoBehaviour {
 
 	//loading in to new room
 	private IEnumerator Fadeout(){
-		fm.FadeOut (Introfade, 30f, 1f);
-		ambient.PlayDelayed (15.75f);
-		ambient1.mute = true;
-		fm.FadeIn (texter, 10f, 1f);
-		yield return new WaitForSeconds (15f);
-		fm.FadeOut (Introfade, 1f);
-		yield return new WaitForSeconds (1f);
-		ambient1.mute = false;
+		//if (skip == false) {
+			fm.FadeOut (Introfade, 30f, 1f);
+			ambient.PlayDelayed (15.75f);
+			ambient1.mute = true;
+			fm.FadeIn (texter, 10f, 1f);
+			yield return new WaitForSeconds (15f);
+			fm.FadeOut (Introfade, 1f);
+			yield return new WaitForSeconds (1f);
+			ambient1.mute = false;
+		//} else {
+			//Introfade.alpha = 0f;
+	//	}
 	}
 
 	//moves to next room
