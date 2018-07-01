@@ -1960,7 +1960,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeInOutPanel: {fileID: 1064366450}
   Introfade: {fileID: 1064366450}
+  texter: {fileID: 0}
   nextroom: 5
+  ambient: {fileID: 0}
+  ambient1: {fileID: 0}
+  skip: 0
 --- !u!224 &401527849
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5623,6 +5627,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 176.07101
       objectReference: {fileID: 0}
+    - target: {fileID: 114001312038544546, guid: 99d8d0fd80e596a41873869a276ec10a,
+        type: 2}
+      propertyPath: sensitivityX
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001312038544546, guid: 99d8d0fd80e596a41873869a276ec10a,
+        type: 2}
+      propertyPath: sensitivityY
+      value: 0.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99d8d0fd80e596a41873869a276ec10a, type: 2}
   m_IsPrefabParent: 0
@@ -6599,7 +6613,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dae11594c267347bb97c66661ef36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 2000
+  objectcount: 0
+  balletspawn: 0
   shoes: {fileID: 1501553366}
   bshoes: {fileID: 1501553365}
 --- !u!4 &1434353623 stripped
@@ -10981,6 +10996,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
