@@ -66,10 +66,10 @@ public class MainMenuManager : MonoBehaviour {
 	private IEnumerator Fadeout(){
 		//if (skip == false) {
 			fm.FadeOut (Introfade, 30f, 1f);
-			ambient.PlayDelayed (15.75f);
+			ambient.PlayDelayed (5.75f);
 			ambient1.mute = true;
 			fm.FadeIn (texter, 10f, 1f);
-			yield return new WaitForSeconds (15f);
+			yield return new WaitForSeconds (5f);
 			fm.FadeOut (Introfade, 1f);
 			yield return new WaitForSeconds (1f);
 			ambient1.mute = false;
