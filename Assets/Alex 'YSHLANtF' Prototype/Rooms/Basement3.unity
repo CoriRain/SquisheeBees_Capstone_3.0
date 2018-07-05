@@ -13117,6 +13117,11 @@ Prefab:
       propertyPath: Lights.Array.data[7]
       value: 
       objectReference: {fileID: 2114912920}
+    - target: {fileID: 114833571143046092, guid: 1249f1ed993a082419a6d892f29974a0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1249f1ed993a082419a6d892f29974a0, type: 2}
   m_IsPrefabParent: 0
